@@ -219,9 +219,9 @@ const questions = [
 let currentStep = 1;
 
 const render = (_steps, _tips, _questions) => {
-    const beginSongs = new Audio('../songs/hello-new-punter-2008-long.mp3');
-    beginSongs.muted = true;
-    beginSongs.play();
+    // const beginSongs = new Audio('../songs/hello-new-punter-2008-long.mp3');
+    // beginSongs.muted = true;
+    // beginSongs.play();
 
     const tipsEL = document.querySelector('.tips'); 
     const steps = document.querySelector('.steps'); 
