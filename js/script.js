@@ -268,8 +268,8 @@ render(steps, tips, questions);
 
 const addEvents = () => {
     const variant = document.querySelectorAll(".questions__wrap ul li");
-    const correctSong = new Audio('../songs/khsm_q1-5-correct-o.mp3');
-    const wrongSong = new Audio('../songs/khsm_q1-5-wrong.mp3');
+    const correctSong = new Audio('/songs/khsm_q1-5-correct-o.mp3');
+    const wrongSong = new Audio('/songs/khsm_q1-5-wrong.mp3');
 
     for(let i = 0; i < variant.length; i++){
         variant[i].addEventListener('click', (e) => {
