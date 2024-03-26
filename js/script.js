@@ -220,6 +220,7 @@ let currentStep = 1;
 
 const render = (_steps, _tips, _questions) => {
     const beginSongs = new Audio('../songs/hello-new-punter-2008-long.mp3');
+    beginSongs.muted = true;
     beginSongs.play();
 
     const tipsEL = document.querySelector('.tips'); 
@@ -280,6 +281,7 @@ const addEvents = () => {
             if(currentVariant.correctly){
                 currentStep++;
                 e.target.className = 'win';
+                correctSong.muted = true;
                 correctSong.play();
                 setTimeout(() => {
                     render(steps, tips, questions);
@@ -287,6 +289,7 @@ const addEvents = () => {
                 }, 3000)
             } else {
                 e.target.className = 'lose';
+                wrongSong.muted = true;
                 wrongSong.play();
                 setTimeout(() => {
                     prompt('Save score');
