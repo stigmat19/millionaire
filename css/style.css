@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+}
+
+li{
+    list-style-type: none;
+}
+
+h1{
+    text-align: center;
+}
+
+#app{
+    height: 100vh;
+    background: url('../img/bg.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.wrap{
+    display: flex;
+    height: 100vh;
+}
+/* questions */
+.questions{
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 70px;
+}
+.questions__wrap{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    width: 60%;
+}
+.questions__wrap h1{
+    background: linear-gradient(to bottom, #1D3358 0%, #000000 50%, #1D3358 100%);
+    padding: 30px;
+    border-radius: 70px;
+    margin-bottom: 20px;
+    border: 2px solid #fff;
+}
+
+.questions__wrap ul {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+
+.questions__wrap ul li{
+    width: 48%;
+    background: linear-gradient(to bottom, #1D3358 0%, #000000 50%, #1D3358 100%);
+    padding: 30px 30px 30px 60px;
+    border-radius: 70px;
+    margin-bottom: 20px;
+    border: 2px solid #fff;
+    position: relative;
+    font-size: 30px;
+}
+.questions__wrap ul li.win{
+    animation: win .5s 6;
+}
+
+.questions__wrap ul li.lose{
+    animation: lose .5s 6;
+}
+
+.questions__wrap ul li span{
+    color: #ce995c;
+    text-transform: uppercase;
+}
+.questions__wrap ul li:before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background-color: #ce995c;
+    border-radius: 50%;
+    left: 30px;
+    top: 41px;
+}
+.questions__wrap ul li:hover{
+    background: #ce995c;
+    color: #fff;
+    cursor: pointer;
+}
+.questions__wrap ul li:hover span{
+    color: #fff;
+}
+/* sidebar */
+.sidebar{
+    width: 300px;
+    padding-top: 30px;
+    padding-right: 25px;
+}
+
+.steps{
+    color: #ce995c;
+}
+.steps li{
+    font-size: 25px;
+    padding-left: 45px;
+    margin-bottom: 3px;
+}
+.steps li.fireproof{
+    color: #fff;
+}
+.steps li.active{
+    background-color: #ce995c;
+    border-radius: 20px;
+    color: #fff;
+}
+.steps li span{
+    display: inline-block;
+    width: 40px;
+    text-align: right;
+    margin-right: 35px;
+}
+
+
+/* tips */
+.tips{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+.tips li{
+    width: 80px;
+    height: 50px;
+    background: url("../img/icons.png") no-repeat;
+    background-size: 250px;
+    cursor: pointer;
+}
+
+
+.tips .fifty_fyfty{
+    background-position: 1px -77px;
+    margin-right: 10px;
+}
+.tips .fifty_fyfty:hover{
+    background-position: 1px -154px;
+}
+
+.tips .hall_help{
+    background-position: -171px -77px;
+    margin-right: 10px;
+}
+.tips .hall_help:hover{
+    background-position: -171px -154px;
+}
+
+.tips .call_friend{
+    background-position: -85px -77px;
+}
+.tips .call_friend:hover{
+    background-position: -85px -154px;
+}
+
+@keyframes win {
+    from{
+        background: #ce995c;
+        color: #fff;
+    }
+    to{
+        background: #61ce5c;
+        color: #fff;
+    }
+}
+
+@keyframes lose {
+    from{
+        background: #ce995c;
+        color: #fff;
+    }
+    to{
+        background: #f03117;
+        color: #fff;
+    }
+}
