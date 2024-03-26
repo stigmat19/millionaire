@@ -283,8 +283,7 @@ const addEvents = () => {
                 e.target.className = 'lose';
                 setTimeout(() => {
                     prompt('Save score');
-                    currentStep = 1;
-                    render(steps, tips, questions);
+                    window.location.reload();
                 }, 3000)
                 
             }
