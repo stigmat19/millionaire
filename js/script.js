@@ -219,6 +219,9 @@ const questions = [
 let currentStep = 1;
 
 const render = (_steps, _tips, _questions) => {
+    const beginSongs = new Audio('../songs/hello-new-punter-2008-long.mp3');
+    beginSongs.play();
+
     const tipsEL = document.querySelector('.tips'); 
     const steps = document.querySelector('.steps'); 
     const questions = document.querySelector('.questions__wrap'); 
@@ -264,6 +267,8 @@ render(steps, tips, questions);
 
 const addEvents = () => {
     const variant = document.querySelectorAll(".questions__wrap ul li");
+    const correctSong = new Audio('../songs/khsm_q1-5-correct-o.mp3');
+    const wrongSong = new Audio('../songs/khsm_q1-5-wrong.mp3');
 
     for(let i = 0; i < variant.length; i++){
         variant[i].addEventListener('click', (e) => {
@@ -274,13 +279,15 @@ const addEvents = () => {
 
             if(currentVariant.correctly){
                 currentStep++;
-                e.target.className = 'win'
+                e.target.className = 'win';
+                correctSong.play();
                 setTimeout(() => {
                     render(steps, tips, questions);
                     addEvents();
                 }, 3000)
             } else {
                 e.target.className = 'lose';
+                wrongSong.play();
                 setTimeout(() => {
                     prompt('Save score');
                     window.location.reload();
